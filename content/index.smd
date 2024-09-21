@@ -67,4 +67,4 @@ Supports threaded execution.
     Order_by and limit are not part of any pushdown, however, they are accessible through the ResultModifier class.
 
     This is where we get the data from a json api (paged and threaded), parse and return.
-    Cardinality manages progress.
+
