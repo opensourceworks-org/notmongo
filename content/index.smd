@@ -10,7 +10,7 @@
 >This DuckB Extension is a test.  
 >To help me understand DuckDB and maybe use JSON APIs.
 >
-> -- Using Zine's theme just because it's awesome and convenient.
+> -- Using [Zine](https://zine-ssg.io/)'s theme just because it's awesome and convenient.
 
 ## What?
 I'm discovering how DuckDB works internally. I've been using it mainly for ad hoc stuff with the excellent cli.
