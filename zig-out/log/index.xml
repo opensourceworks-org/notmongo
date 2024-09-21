@@ -1,0 +1,85 @@
+<rss version="2.0">
+ <channel>
+  <title>Zine Changelog</title>
+  <link>https://zine-ssg.io/</link>
+  <description>Curated list of changes to Zine</description>
+  <generator>Zine -- https://zine-ssg.io</generator>
+  <language>en-us</language>
+  <lastBuildDate>Sat, 21 Sep 2024 15:48:15 +0000</lastBuildDate>
+  
+   
+  
+   
+    <item>
+     <pubDate>Thu, 19 Sep 2024 00:00:00 +0000</pubDate>
+     <link>https://notmongo.opensourceworks.org/log/#v0.6.3</link>
+     <guid>https://notmongo.opensourceworks.org/log/#v0.6.3</guid>
+     <title>v0.6.3</title>
+     <description>&lt;div id=v0.6.3&gt;&lt;ul&gt;&lt;li&gt;When iterating &lt;strong&gt;content sections&lt;/strong&gt; with &lt;code&gt;$page.contentSections()&lt;/code&gt;, you can now obtain the section&apos;s attached heading by calling &lt;a href=&quot;/docs/superhtml/scripty/#ContentSection.heading&quot;&gt;&lt;code&gt;heading&lt;/code&gt;&lt;/a&gt; or &lt;a href=&quot;/docs/superhtml/scripty/#ContentSection.heading?&quot;&gt;&lt;code&gt;heading?&lt;/code&gt;&lt;/a&gt; on it. This was added mainly to support the usecase of giving titles to RSS entries generated from sections.&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;</description>
+    </item>
+   
+  
+   
+    <item>
+     <pubDate>Tue, 17 Sep 2024 00:00:00 +0000</pubDate>
+     <link>https://notmongo.opensourceworks.org/log/#v0.6.2</link>
+     <guid>https://notmongo.opensourceworks.org/log/#v0.6.2</guid>
+     <title>v0.6.2</title>
+     <description>&lt;div id=v0.6.2&gt;&lt;ul&gt;&lt;li&gt;&lt;code&gt;$image.linked()&lt;/code&gt; is now implemented and allows you to quickly create an image that links to itself.&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;</description>
+    </item>
+   
+  
+   
+    <item>
+     <pubDate>Sat, 07 Sep 2024 00:00:00 +0000</pubDate>
+     <link>https://notmongo.opensourceworks.org/log/#v0.6.1-vscode</link>
+     <guid>https://notmongo.opensourceworks.org/log/#v0.6.1-vscode</guid>
+     <title>v0.6.1-vscode</title>
+     <description>&lt;div id=v0.6.1-vscode&gt;&lt;ul&gt;&lt;li&gt;The VSCode marketplace now has a &lt;a href=&quot;https://marketplace.visualstudio.com/items?itemName=LorisCro.supermd&quot; target=&quot;_blank&quot;&gt;SuperMD Extension&lt;/a&gt; that gives you syntax highlighting for SuperMD files (no LSP for it yet though, sorry!).&lt;/li&gt;&lt;li&gt;Similarly, the VSCode &lt;a href=&quot;https://marketplace.visualstudio.com/items?itemName=LorisCro.superhtml&quot; target=&quot;_blank&quot;&gt;SuperHTML Extension&lt;/a&gt; would not provide you with syntax highlighting before, but now it does.&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;</description>
+    </item>
+   
+  
+   
+    <item>
+     <pubDate>Sat, 07 Sep 2024 00:00:00 +0000</pubDate>
+     <link>https://notmongo.opensourceworks.org/log/#v0.6.1</link>
+     <guid>https://notmongo.opensourceworks.org/log/#v0.6.1</guid>
+     <title>v0.6.1</title>
+     <description>&lt;div id=v0.6.1&gt;&lt;ul&gt;&lt;li&gt;Updated &lt;a href=&quot;https://github.com/rockorager/zeit&quot; target=&quot;_blank&quot;&gt;&lt;code&gt;rockorager/zeit&lt;/code&gt;&lt;/a&gt;, which now includes full support for date formatting strings based on the Go magic date. Previously Zine hardcoded only a very small subset of possible formatting styles. See the reference docs for &lt;a href=&quot;https://zine-ssg.io/docs/superhtml/scripty#Date.format&quot; target=&quot;_blank&quot;&gt;&lt;code&gt;Date.format&lt;/code&gt;&lt;/a&gt; for more info.&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;</description>
+    </item>
+   
+  
+   
+    <item>
+     <pubDate>Fri, 06 Sep 2024 00:00:00 +0000</pubDate>
+     <link>https://notmongo.opensourceworks.org/log/#v0.6.0</link>
+     <guid>https://notmongo.opensourceworks.org/log/#v0.6.0</guid>
+     <title>v0.6.0</title>
+     <description>&lt;div id=v0.6.0&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;Added &lt;code&gt;Page.parentSection()&lt;/code&gt; in SuperHTML.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;The website now has a docs section &lt;a href=&quot;https://zine-ssg.io/docs/editors/&quot; target=&quot;_blank&quot;&gt;for editor support&lt;/a&gt;.&lt;br&gt;Follow those instructions to get syntax highlighting and LSP support in your favorite editor.&lt;br&gt;&lt;strong&gt;If you have trouble setting up your editor feel free to &lt;a href=&quot;https://zine-ssg.io/community/&quot; target=&quot;_blank&quot;&gt;ask for help in the community&lt;/a&gt;&lt;/strong&gt;.&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;</description>
+    </item>
+   
+  
+   
+    <item>
+     <pubDate>Wed, 04 Sep 2024 00:00:00 +0000</pubDate>
+     <link>https://notmongo.opensourceworks.org/log/#v0.5.1</link>
+     <guid>https://notmongo.opensourceworks.org/log/#v0.5.1</guid>
+     <title>v0.5.1</title>
+     <description>&lt;div id=v0.5.1&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;Added typst syntax highlighting support.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;On the topic of RSS feeds, this page &lt;a href=&quot;https://zine-ssg.io/log/index.xml&quot; target=&quot;_blank&quot;&gt;now has an RSS feed&lt;/a&gt; that you can subscribe to. Every entry in this devlog will become an entry in the RSS feed. If you&apos;re curious to see how this is implemented, clone this repo and see how &lt;code&gt;content/log.smd&lt;/code&gt; and &lt;code&gt;layouts/log.xml&lt;/code&gt; work together to make it happen (see &lt;a href=&quot;/quickstart/&quot;&gt;Get Started&lt;/a&gt; for more info).&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;&lt;code&gt;Page&lt;/code&gt; in SuperHTML gained the ability to loop over sections defined by a Page.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;SuperMD Directives can now store data (key-value fields) that can then be accessed programmtically by SuperHTML.&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;</description>
+    </item>
+   
+  
+   
+    <item>
+     <pubDate>Sun, 01 Sep 2024 00:00:00 +0000</pubDate>
+     <link>https://notmongo.opensourceworks.org/log/#v0.5.0</link>
+     <guid>https://notmongo.opensourceworks.org/log/#v0.5.0</guid>
+     <title>v0.5.0</title>
+     <description>&lt;div id=v0.5.0&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;Added &lt;a href=&quot;/docs/superhtml/scripty/#Build&quot;&gt;&lt;code&gt;$build.generated&lt;/code&gt;&lt;/a&gt; which evaluates to the date in which the build is taking place. It doesn&apos;t add a dependency on the current date so a page will only display a newer date if it actually gets regenerated.&lt;/p&gt;&lt;p&gt;Useful for example to set &lt;code&gt;lastBuildDate&lt;/code&gt; in RSS feeds. Note that without caching the date will always be updated, potentially resulting in unwanted behavior.&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;</description>
+    </item>
+   
+  
+   
+  
+ </channel>
+</rss>
