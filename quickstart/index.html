@@ -2,21 +2,21 @@
 <html>
   <head id="head">
     <meta charset="UTF-8">
-    <meta name="description" content="Zine: Fast, Scalable and Flexible Static Site Generator">
+    <meta name="description" content="NotMongo: A Maybe DuckDB Extension for JSON APIs">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@croloris">
     <meta name="twitter:author" content="@croloris">
-    <meta name="twitter:description" content="Zine: Fast, Scalable and Flexible Static Site Generator">
-    <meta name="twitter:title" content="Quickstart | Zine">
+    <meta name="twitter:description" content="NotMongo: A Maybe DuckDB Extension for JSON APIs">
+    <meta name="twitter:title" content="Quickstart | NotMongo">
     <meta name="twitter:image" content="https://notmongo.opensourceworks.org/preview.png">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Quickstart | Zine">
+    <meta property="og:title" content="Quickstart | NotMongo">
     <meta property="og:image" content="https://notmongo.opensourceworks.org/preview.png">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title id="title">
       Quickstart
-      - Zine
+      - NotMongo
     </title>
     <link rel="stylesheet" type="text/css" href="/fonts.css">
     <link rel="stylesheet" type="text/css" href="/fira_code.css">
@@ -28,15 +28,11 @@
     <nav id="menu" class="centered">
       <a href="/">Home</a>
       •
-      <a href="/quickstart/">Get Started</a>
+      <a href="https://duckdb.org/">DuckDB</a>
       •
-      <a href="/docs/">Documentation</a>
+      <a href="https://community-extensions.duckdb.org/index.html">DuckDB Community Extensions</a>
       •
-      <a href="/community/">Community</a>
-      •
-      <a href="/log/">Devlog</a>
-      •
-      <a href="https://github.com/kristoff-it/zine" target="_blank">
+      <a href="https://github.com/jeroenflvr/rest-api-extension" target="_blank">
         Code
       </a>
     </nav>
@@ -68,7 +64,7 @@
 			font-size: 1rem;
 		}
   </style>
-  <h3 class="overtitle centered">Zine</h3>
+  <h3 class="overtitle centered">NotMongo</h3>
   <h1 class="title">Quickstart</h1>
   <div id="page"><div class="block warning"><h1>Warning</h1><p>Zine is alpha software.<br>Using Zine today means participating in its development.</p></div><h2>1. Get the Zig compiler</h2><p><strong>Zine is in the process of becoming a fully self-contained executable</strong>, but for now it heavily leverages the Zig build system, meaning that Zig is the only dependency you need.</p><p>We currently track Zig's <strong>latest tagged release (0.13.0)</strong>.</p><p>You can download it from from <a href="https://ziglang.org" target="_blank">the official website</a> or use <a href="https://github.com/marler8997/zigup" target="_blank">zigup</a>.</p><h2>2. Clone Zine's Sample Site</h2><p>What's a better sample site than the official site itself?</p><p><strong><code>shell</code></strong></p><pre><code class="bash"><span class="constant">git</span> <span class="constant">clone</span> <span class="constant">https://github.com/kristoff-it/zine-ssg.io.git</span>
 <span class="constant">cd</span> <span class="constant">zine-ssg.io</span>

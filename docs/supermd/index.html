@@ -2,21 +2,21 @@
 <html>
   <head id="head">
     <meta charset="UTF-8">
-    <meta name="description" content="Zine: Fast, Scalable and Flexible Static Site Generator">
+    <meta name="description" content="NotMongo: A Maybe DuckDB Extension for JSON APIs">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@croloris">
     <meta name="twitter:author" content="@croloris">
-    <meta name="twitter:description" content="Zine: Fast, Scalable and Flexible Static Site Generator">
-    <meta name="twitter:title" content="SuperMD Basics | Zine">
+    <meta name="twitter:description" content="NotMongo: A Maybe DuckDB Extension for JSON APIs">
+    <meta name="twitter:title" content="SuperMD Basics | NotMongo">
     <meta name="twitter:image" content="https://notmongo.opensourceworks.org/preview.png">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="SuperMD Basics | Zine">
+    <meta property="og:title" content="SuperMD Basics | NotMongo">
     <meta property="og:image" content="https://notmongo.opensourceworks.org/preview.png">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title id="title">
       SuperMD Basics
-      - Zine
+      - NotMongo
     </title>
     <link rel="stylesheet" type="text/css" href="/fonts.css">
     <link rel="stylesheet" type="text/css" href="/fira_code.css">
@@ -28,15 +28,11 @@
     <nav id="menu" class="centered">
       <a href="/">Home</a>
       •
-      <a href="/quickstart/">Get Started</a>
+      <a href="https://duckdb.org/">DuckDB</a>
       •
-      <a href="/docs/">Documentation</a>
+      <a href="https://community-extensions.duckdb.org/index.html">DuckDB Community Extensions</a>
       •
-      <a href="/community/">Community</a>
-      •
-      <a href="/log/">Devlog</a>
-      •
-      <a href="https://github.com/kristoff-it/zine" target="_blank">
+      <a href="https://github.com/jeroenflvr/rest-api-extension" target="_blank">
         Code
       </a>
     </nav>
@@ -82,7 +78,7 @@
     white-space: nowrap;
   }
   </style>
-  <h3 class="centered">Zine</h3>
+  <h3 class="centered">NotMongo</h3>
   <h1>SuperMD Basics</h1>
   <div id="docs"><h2>Intro</h2><p><strong>Make sure to read <a href="/docs/scripty/">Scripty Basics</a> first.</strong></p><p>SuperMD is an extension of Markdown that adds Scripty expression support.</p><p>There are <a href="https://github.github.com/gfm/" target="_blank">plenty</a> <a href="https://github.com/iamgio/quarkdown" target="_blank">of</a> Markdown dialects in the wild that add new syntax to it, and there are also <a href="https://mdxjs.com/" target="_blank">plenty</a> <a href="https://gohugo.io/content-management/shortcodes/" target="_blank">of</a> templating languages that allow you to <em>template</em> your Markdown content.</p><p>The issue with the first approach is that new syntax complicates an already overcomplicated language (to parse) and it usually only solves very specific problems.</p><p>The issue with the second approach is that, while templating (like <a href="https://gohugo.io/content-management/shortcodes/" target="_blank">Hugo Shortcodes</a>) does allow you to extend Markdown in a very general way, it usually translates into pulling layouting concerns into the content, which is the exact thing we were trying to minimize by writing Markdown in the first place.</p><h3>Two Columns</h3><p>For example let's say that you would like to have the middle section of a page to have a two column layout, this is how you could solve it:</p><ul><li><p>In <a href="https://commonmark.org/" target="_blank">CommonMark</a> (with inline HTML support enabled):</p><pre><code class="markdown">&lt;div class=&quot;flex-row&quot;&gt;&lt;div&gt;
 <span class="punctuation special"></span>  

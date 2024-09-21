@@ -2,21 +2,21 @@
 <html>
   <head id="head">
     <meta charset="UTF-8">
-    <meta name="description" content="Zine: Fast, Scalable and Flexible Static Site Generator">
+    <meta name="description" content="NotMongo: A Maybe DuckDB Extension for JSON APIs">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@croloris">
     <meta name="twitter:author" content="@croloris">
-    <meta name="twitter:description" content="Zine: Fast, Scalable and Flexible Static Site Generator">
-    <meta name="twitter:title" content="Assets | Zine">
+    <meta name="twitter:description" content="NotMongo: A Maybe DuckDB Extension for JSON APIs">
+    <meta name="twitter:title" content="Assets | NotMongo">
     <meta name="twitter:image" content="https://notmongo.opensourceworks.org/preview.png">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Assets | Zine">
+    <meta property="og:title" content="Assets | NotMongo">
     <meta property="og:image" content="https://notmongo.opensourceworks.org/preview.png">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title id="title">
       Assets
-      - Zine
+      - NotMongo
     </title>
     <link rel="stylesheet" type="text/css" href="/fonts.css">
     <link rel="stylesheet" type="text/css" href="/fira_code.css">
@@ -28,15 +28,11 @@
     <nav id="menu" class="centered">
       <a href="/">Home</a>
       •
-      <a href="/quickstart/">Get Started</a>
+      <a href="https://duckdb.org/">DuckDB</a>
       •
-      <a href="/docs/">Documentation</a>
+      <a href="https://community-extensions.duckdb.org/index.html">DuckDB Community Extensions</a>
       •
-      <a href="/community/">Community</a>
-      •
-      <a href="/log/">Devlog</a>
-      •
-      <a href="https://github.com/kristoff-it/zine" target="_blank">
+      <a href="https://github.com/jeroenflvr/rest-api-extension" target="_blank">
         Code
       </a>
     </nav>
@@ -82,7 +78,7 @@
     white-space: nowrap;
   }
   </style>
-  <h3 class="centered">Zine</h3>
+  <h3 class="centered">NotMongo</h3>
   <h1>Assets</h1>
   <div id="docs"><h2>Assets in Zine</h2><p>A Zine site can have 3 kinds of assets: <strong>site</strong>, <strong>page</strong>, and <strong>build</strong> assets.</p><div class="block"><h1>Note</h1><p>SuperMD and SuperHTML have different ways of accessing assets, make sure to read their respective documentation pages first.</p></div><h2>Site Assets</h2><p>These assets are located under <code>assets_dir_path</code>.</p><p>In SuperHTML, the main way of accessing site assets is by accessing them through an instance of Site: <code>$site.asset(&apos;logo.png&apos;)</code>.</p><p>Once you have an <code>Asset</code>, the main way to use it is by <code>link</code>ing it:</p><ul><li><code>$site.asset(&apos;logo.png&apos;).link()</code></li></ul><p><strong>Calling <code>link</code> on an asset will cause Zine to install it in the output directory.</strong> Conversely, accessing an asset <em>without</em> calling <code>link</code> on it will <strong>not</strong> cause it to be installed.</p><div class="block"><h1>SuperMD</h1><p>In SuperMD you can reference assets using the appropriate functions of <code>$link</code>, <code>$image</code> or <code>$video</code>. Referencing an asset in SuperMD will cause it to be installed just like it does for SuperHTML.</p></div><p>The SuperHTML Scripty reference page lists all other operations that can be performed on instances of <code>Asset</code>.</p><p>One example of where this makes sense is when you have a Ziggy (or JSON) document that you want to use to build a page, but that is not meant to be included the final output.</p><p><strong><code>songs-list.shtml</code></strong></p><pre><code class="html"><span class="punctuation bracket">&lt;</span><span class="tag">ul</span> <span class="attribute">:loop</span>=&quot;<span class="string">$page.asset(&apos;songs.json&apos;).ziggy()</span>&quot;<span class="punctuation bracket">&gt;</span>
   <span class="punctuation bracket">&lt;</span><span class="tag">li</span> <span class="attribute">:text</span>=&quot;<span class="string">$loop.it.get(&apos;name&apos;)</span>&quot;<span class="punctuation bracket">&gt;</span><span class="punctuation bracket">&lt;/</span><span class="tag">li</span><span class="punctuation bracket">&gt;</span>

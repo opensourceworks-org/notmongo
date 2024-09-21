@@ -2,21 +2,21 @@
 <html>
   <head id="head">
     <meta charset="UTF-8">
-    <meta name="description" content="Zine: Fast, Scalable and Flexible Static Site Generator">
+    <meta name="description" content="NotMongo: A Maybe DuckDB Extension for JSON APIs">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@croloris">
     <meta name="twitter:author" content="@croloris">
-    <meta name="twitter:description" content="Zine: Fast, Scalable and Flexible Static Site Generator">
-    <meta name="twitter:title" content="Deploying on GitHub Pages | Zine">
+    <meta name="twitter:description" content="NotMongo: A Maybe DuckDB Extension for JSON APIs">
+    <meta name="twitter:title" content="Deploying on GitHub Pages | NotMongo">
     <meta name="twitter:image" content="https://notmongo.opensourceworks.org/preview.png">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Deploying on GitHub Pages | Zine">
+    <meta property="og:title" content="Deploying on GitHub Pages | NotMongo">
     <meta property="og:image" content="https://notmongo.opensourceworks.org/preview.png">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title id="title">
       Deploying on GitHub Pages
-      - Zine
+      - NotMongo
     </title>
     <link rel="stylesheet" type="text/css" href="/fonts.css">
     <link rel="stylesheet" type="text/css" href="/fira_code.css">
@@ -28,15 +28,11 @@
     <nav id="menu" class="centered">
       <a href="/">Home</a>
       •
-      <a href="/quickstart/">Get Started</a>
+      <a href="https://duckdb.org/">DuckDB</a>
       •
-      <a href="/docs/">Documentation</a>
+      <a href="https://community-extensions.duckdb.org/index.html">DuckDB Community Extensions</a>
       •
-      <a href="/community/">Community</a>
-      •
-      <a href="/log/">Devlog</a>
-      •
-      <a href="https://github.com/kristoff-it/zine" target="_blank">
+      <a href="https://github.com/jeroenflvr/rest-api-extension" target="_blank">
         Code
       </a>
     </nav>
@@ -82,7 +78,7 @@
     white-space: nowrap;
   }
   </style>
-  <h3 class="centered">Zine</h3>
+  <h3 class="centered">NotMongo</h3>
   <h1>Deploying on GitHub Pages</h1>
   <div id="docs"><h2>About</h2><p>This guide assumes that you're already familiar with GitHub Pages. Please refer <a href="https://pages.github.com/" target="_blank">the official GitHub Pages documentation</a> for more info.</p><h2>1. Use GitHub Actions</h2><p>GitHub Actions runner have an inherent overhead and, since Zine is a collection of tools that gets compiled on-demand, your runner will need to do some work that wouldn't be necessary with a single-executable tool.</p><p><strong>Luckily, the build will be cached automatically by using <a href="https://github.com/marketplace/actions/setup-zig-compiler" target="_blank">mlugg/setup-zig</a></strong>.</p><p><a href="https://github.com/kristoff-it/zine-ssg.io/actions" target="_blank">This site currently builds in 25-35 seconds</a>, of which 12 are spent setting up Zig, and 2 for the actual site build (the rest is GitHub Pages overhead).</p><p><strong><code>.github/workflows/gh-pages.yml</code></strong></p><pre><code>name: github pages
 

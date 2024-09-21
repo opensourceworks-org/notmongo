@@ -2,21 +2,21 @@
 <html>
   <head id="head">
     <meta charset="UTF-8">
-    <meta name="description" content="Zine: Fast, Scalable and Flexible Static Site Generator">
+    <meta name="description" content="NotMongo: A Maybe DuckDB Extension for JSON APIs">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@croloris">
     <meta name="twitter:author" content="@croloris">
-    <meta name="twitter:description" content="Zine: Fast, Scalable and Flexible Static Site Generator">
-    <meta name="twitter:title" content="Scripty Basics | Zine">
+    <meta name="twitter:description" content="NotMongo: A Maybe DuckDB Extension for JSON APIs">
+    <meta name="twitter:title" content="Scripty Basics | NotMongo">
     <meta name="twitter:image" content="https://notmongo.opensourceworks.org/preview.png">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Scripty Basics | Zine">
+    <meta property="og:title" content="Scripty Basics | NotMongo">
     <meta property="og:image" content="https://notmongo.opensourceworks.org/preview.png">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title id="title">
       Scripty Basics
-      - Zine
+      - NotMongo
     </title>
     <link rel="stylesheet" type="text/css" href="/fonts.css">
     <link rel="stylesheet" type="text/css" href="/fira_code.css">
@@ -28,15 +28,11 @@
     <nav id="menu" class="centered">
       <a href="/">Home</a>
       •
-      <a href="/quickstart/">Get Started</a>
+      <a href="https://duckdb.org/">DuckDB</a>
       •
-      <a href="/docs/">Documentation</a>
+      <a href="https://community-extensions.duckdb.org/index.html">DuckDB Community Extensions</a>
       •
-      <a href="/community/">Community</a>
-      •
-      <a href="/log/">Devlog</a>
-      •
-      <a href="https://github.com/kristoff-it/zine" target="_blank">
+      <a href="https://github.com/jeroenflvr/rest-api-extension" target="_blank">
         Code
       </a>
     </nav>
@@ -68,7 +64,7 @@
 			font-size: 1rem;
 		}
   </style>
-  <h3 class="overtitle centered">Zine</h3>
+  <h3 class="overtitle centered">NotMongo</h3>
   <h1 class="title">Scripty Basics</h1>
   <div id="page"><h2>Intro</h2><p>Zine uses SuperMD (an extension of Markdown) for content and SuperHTML (an extension of HTML5) for templating.</p><p>Both SuperMD and SuperHTML extend their respective original file formats by embedding Scripty expressions in key places.</p><p>For example this is how you can print a link to a page in SuperHTML:</p><pre><code class="superhtml"><span class="punctuation bracket">&lt;</span><span class="special">ctx</span> <span class="attribute">about</span><span class="punctuation delimiter">=</span><span class="string">&quot;</span><span class="string">$site.page(&apos;about&apos;)</span><span class="string">&quot;</span><span class="punctuation bracket">&gt;</span>
   <span class="punctuation bracket">&lt;</span><span class="tag">a</span> <span class="attribute">href</span><span class="punctuation delimiter">=</span><span class="string">&quot;</span><span class="string">$ctx.about.link()</span><span class="string">&quot;</span> <span class="attribute">text</span><span class="punctuation delimiter">=</span><span class="string">&quot;</span><span class="string">$ctx.about.title</span><span class="string">&quot;</span><span class="punctuation bracket">&gt;</span><span class="punctuation bracket">&lt;/</span><span class="special">a</span><span class="punctuation bracket">&gt;</span>

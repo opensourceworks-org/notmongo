@@ -2,21 +2,21 @@
 <html>
   <head id="head">
     <meta charset="UTF-8">
-    <meta name="description" content="Zine: Fast, Scalable and Flexible Static Site Generator">
+    <meta name="description" content="NotMongo: A Maybe DuckDB Extension for JSON APIs">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@croloris">
     <meta name="twitter:author" content="@croloris">
-    <meta name="twitter:description" content="Zine: Fast, Scalable and Flexible Static Site Generator">
-    <meta name="twitter:title" content="Documentation | Zine">
+    <meta name="twitter:description" content="NotMongo: A Maybe DuckDB Extension for JSON APIs">
+    <meta name="twitter:title" content="Documentation | NotMongo">
     <meta name="twitter:image" content="https://notmongo.opensourceworks.org/preview.png">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Documentation | Zine">
+    <meta property="og:title" content="Documentation | NotMongo">
     <meta property="og:image" content="https://notmongo.opensourceworks.org/preview.png">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title id="title">
       Documentation
-      - Zine
+      - NotMongo
     </title>
     <link rel="stylesheet" type="text/css" href="/fonts.css">
     <link rel="stylesheet" type="text/css" href="/fira_code.css">
@@ -28,15 +28,11 @@
     <nav id="menu" class="centered">
       <a href="/">Home</a>
       •
-      <a href="/quickstart/">Get Started</a>
+      <a href="https://duckdb.org/">DuckDB</a>
       •
-      <a href="/docs/">Documentation</a>
+      <a href="https://community-extensions.duckdb.org/index.html">DuckDB Community Extensions</a>
       •
-      <a href="/community/">Community</a>
-      •
-      <a href="/log/">Devlog</a>
-      •
-      <a href="https://github.com/kristoff-it/zine" target="_blank">
+      <a href="https://github.com/jeroenflvr/rest-api-extension" target="_blank">
         Code
       </a>
     </nav>
@@ -82,7 +78,7 @@
     white-space: nowrap;
   }
   </style>
-  <h3 class="centered">Zine</h3>
+  <h3 class="centered">NotMongo</h3>
   <h1>Documentation</h1>
   <div id="docs"><div class="block warning"><h1>Warning</h1><p>Zine is alpha software.<br>Using Zine today means participating in its development.</p></div><h2>In this section</h2><p>This page will guide you through the first few motions of getting a Zine site started.</p><p>Once you're familiar with the content of this page you can start venturing into topic deep dives:</p><ul><li><a href="/docs/scripty/">Scripty Basics</a></li><li><a href="/docs/editors/">Editor Support</a></li><li>Content<ul><li><a href="/docs/supermd/">SuperMD Basics</a></li><li><a href="/docs/supermd/scripty/">Scripty Reference</a> <em>(SuperMD)</em></li></ul></li><li>Layouts<ul><li><a href="/docs/superhtml/">SuperHTML Basics</a></li><li><a href="/docs/superhtml/scripty/">Scripty Reference</a> <em>(SuperHTML)</em></li></ul></li><li><a href="/docs/assets/">Assets</a></li><li><a href="/docs/i18n/">Multilingual Websites</a> <em>(i18n)</em></li><li>Deploying<ul><li><a href="/docs/deploying/github-pages/">GitHub Pages</a></li><li><a href="/docs/deploying/cloudflare-pages/">Cloudflare Pages</a></li></ul></li><li><a href="/docs/frequent/">Frequently Encountered Use Cases</a></li></ul><h2>Requirements</h2><p>Zine is a collection of tools orchestrated by the Zig build system.</p><p>Zine only depends on the Zig compiler, follow <a href="/quickstart/">the quickstart guide</a> to learn how to setup Zig and other optional developer tooling.</p><h2>Project Structure</h2><p>Your website only needs the following two files to get started:</p><p><strong><code>build.zig.zon</code></strong> <pre><code class="zig"><span class="punctuation delimiter">.</span><span class="punctuation bracket">{</span>
     <span class="punctuation delimiter">.</span><span class="field">name</span> = <span class="string">&quot;NotMongo&quot;</span><span class="punctuation delimiter">,</span>

@@ -2,21 +2,21 @@
 <html>
   <head id="head">
     <meta charset="UTF-8">
-    <meta name="description" content="Zine: Fast, Scalable and Flexible Static Site Generator">
+    <meta name="description" content="NotMongo: A Maybe DuckDB Extension for JSON APIs">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@croloris">
     <meta name="twitter:author" content="@croloris">
-    <meta name="twitter:description" content="Zine: Fast, Scalable and Flexible Static Site Generator">
-    <meta name="twitter:title" content="SuperHTML Scripty Reference | Zine">
+    <meta name="twitter:description" content="NotMongo: A Maybe DuckDB Extension for JSON APIs">
+    <meta name="twitter:title" content="SuperHTML Scripty Reference | NotMongo">
     <meta name="twitter:image" content="https://notmongo.opensourceworks.org/preview.png">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="SuperHTML Scripty Reference | Zine">
+    <meta property="og:title" content="SuperHTML Scripty Reference | NotMongo">
     <meta property="og:image" content="https://notmongo.opensourceworks.org/preview.png">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title id="title">
       SuperHTML Scripty Reference
-      - Zine
+      - NotMongo
     </title>
     <link rel="stylesheet" type="text/css" href="/fonts.css">
     <link rel="stylesheet" type="text/css" href="/fira_code.css">
@@ -28,15 +28,11 @@
     <nav id="menu" class="centered">
       <a href="/">Home</a>
       •
-      <a href="/quickstart/">Get Started</a>
+      <a href="https://duckdb.org/">DuckDB</a>
       •
-      <a href="/docs/">Documentation</a>
+      <a href="https://community-extensions.duckdb.org/index.html">DuckDB Community Extensions</a>
       •
-      <a href="/community/">Community</a>
-      •
-      <a href="/log/">Devlog</a>
-      •
-      <a href="https://github.com/kristoff-it/zine" target="_blank">
+      <a href="https://github.com/jeroenflvr/rest-api-extension" target="_blank">
         Code
       </a>
     </nav>
@@ -125,7 +121,7 @@
 	  }
 	}
   </style>
-  <h3 class="centered">Zine</h3>
+  <h3 class="centered">NotMongo</h3>
   <h1>SuperHTML Scripty Reference</h1>
   <div id="reference"><div id=global><h1><a class="" href="#global">Global Scope</a></h1><h2><code>$site</code> : <a href="#Site">Site</a></h2><p>The current website. In a multilingual website, each locale will have its own separate instance of $site</p><h2><code>$page</code> : <a href="#Page">Page</a></h2><p>The page being currently rendered.</p><h2><code>$build</code> : <a href="#Build">Build</a></h2><p>Gives you access to build-time assets (i.e. assets built via the Zig build system) alongside other information relative to the current build.</p><h2><code>$i18n</code> : <a href="#Map">Map</a></h2><p>In a multilingual website it contains the translations defined in the corresponding i18n file.</p><p>See the i18n docs for more info.</p><h2><code>$ctx</code> : <a href="#Ctx">Ctx</a></h2><p>A key-value mapping that contains data defined in <code>&lt;ctx&gt;</code> nodes.</p><h2><code>$loop</code> : ?<a href="#Iterator">Iterator</a></h2><p>The current iterator, only available within elements that have a <code>loop</code> attribute.</p><h2><code>$if</code> : ?<a href="#any">any</a></h2><p>The current branching variable, only available within elements that have an <code>if</code> attribute used to unwrap an optional value.</p></div><div id=Site><h1><a class="" href="#Site">Site</a></h1><p>The global site configuration. The fields come from the call to <code>website</code> in your <code>build.zig</code>.</p><p>Gives you also access to assets and static assets from the directories defined in your site configuration.</p><h2>Fields</h2><h3><code>host_url</code> : <a href="#String">String</a></h3><p>The host URL, as defined in your <code>build.zig</code>.</p><h3><code>title</code> : <a href="#String">String</a></h3><p>The website title, as defined in your <code>build.zig</code>.</p><h2>Functions</h2><h3 id=Site.localeCode> <a href="#Site.localeCode"><code>fn</code></a> localeCode () -> <a href="#String">String</a></h3><p>In a multilingual website, returns the locale of the current variant as defined in your <code>build.zig</code> file.</p><h4>Examples</h4><pre><code class="superhtml"><span class="punctuation bracket">&lt;</span><span class="special">html</span> <span class="attribute">lang</span><span class="punctuation delimiter">=</span><span class="string">&quot;</span><span class="string">$site.localeCode()</span><span class="string">&quot;</span><span class="punctuation bracket">&gt;</span><span class="punctuation bracket">&lt;/</span><span class="special">html</span><span class="punctuation bracket">&gt;</span>
 </code></pre>

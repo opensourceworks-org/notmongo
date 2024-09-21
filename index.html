@@ -2,21 +2,21 @@
 <html>
   <head id="head">
     <meta charset="UTF-8">
-    <meta name="description" content="Zine: Fast, Scalable and Flexible Static Site Generator">
+    <meta name="description" content="NotMongo: A Maybe DuckDB Extension for JSON APIs">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@croloris">
     <meta name="twitter:author" content="@croloris">
-    <meta name="twitter:description" content="Zine: Fast, Scalable and Flexible Static Site Generator">
-    <meta name="twitter:title" content="Home | Zine">
+    <meta name="twitter:description" content="NotMongo: A Maybe DuckDB Extension for JSON APIs">
+    <meta name="twitter:title" content="Home | NotMongo">
     <meta name="twitter:image" content="https://notmongo.opensourceworks.org/preview.png">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Home | Zine">
+    <meta property="og:title" content="Home | NotMongo">
     <meta property="og:image" content="https://notmongo.opensourceworks.org/preview.png">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title id="title">
       Home
-      - Zine
+      - NotMongo
     </title>
     <link rel="stylesheet" type="text/css" href="/fonts.css">
     <link rel="stylesheet" type="text/css" href="/fira_code.css">
@@ -90,6 +90,17 @@
 		.get-started a:hover {
 			background-color: white;
 		}
+
+		img.downloadlogo {
+			height: 30px;
+			width: 130px;
+			position: absolute;
+			top: 10px;
+			left: 15px;
+			z-index: 999;
+			background: red;
+			opacity: 0 !important;
+		}
   </style>
 
   </head>
@@ -97,27 +108,23 @@
     <nav id="menu" class="centered">
       <a href="/">Home</a>
       •
-      <a href="/quickstart/">Get Started</a>
+      <a href="https://duckdb.org/">DuckDB</a>
       •
-      <a href="/docs/">Documentation</a>
+      <a href="https://community-extensions.duckdb.org/index.html">DuckDB Community Extensions</a>
       •
-      <a href="/community/">Community</a>
-      •
-      <a href="/log/">Devlog</a>
-      •
-      <a href="https://github.com/kristoff-it/zine" target="_blank">
+      <a href="https://github.com/jeroenflvr/rest-api-extension" target="_blank">
         Code
       </a>
     </nav>
     <div id="content">
       
-  <h1 class="centered title">Zine</h1>
-  <h2 class="centered subtitle">Fast, Scalable, and Flexible Static Site Generator</h2>
+  <h1 class="centered title">NotMongo</h1>
+  <h2 class="centered subtitle">A Maybe DuckDB Extension for JSON APIs</h2>
   <p class="centered tagline">
-    Make art with your words.
+    <img src="/DuckDB_Logo-horizontal.svg" alt="">DuckDB. Is there anything they can't do?!
   </p>
-  <div class="get-started"><a href="/quickstart/">Get Started</a></div>
-  <div id="page"><div class="block warning"><h1>Warning</h1><p>Zine is alpha software.<br>Using Zine today means participating in its development.</p></div><h2>What is Zine?</h2><p>A Zine site is a collection of content files and layouts.</p><p>Zine turns your content into HTML, styles it using your layouts, and finally copies the result (alongside other assets like images) into an output directory that you can then publish on static hosting services like GitHub Pages.</p><p>Zine uses a <strong>structured approach to content authoring</strong> that helps keeping sizeable content collections manageable. Similarly, the build process uses <strong>surgical dependency tracking</strong> to ensure minimal rebuilds, keeping the authoring experience excellent at all scales.</p><p><em>Zine is pronounced like in <a href="https://en.wikipedia.org/wiki/Zine" target="_blank">fan<strong>zine</strong></a></em>.</p><h2>A handcrafted authoring experience</h2><p>Zine uses <a href="/docs/supermd/">SuperMD</a> for content and <a href="/docs/superhtml/">SuperHTML</a> for defining layouts.</p><p>SuperMD is an extension of Markdown that allows you to <strong>define embedded assets and semantic constructs that would be impossible to express in Markdown</strong> without using inline HTML.</p><p>SuperHTML is an extension of HTML5 that focuses on expressing <strong>correct templating logic</strong>. With SuperHTML it's <strong>impossible to generate malformed HTML</strong> and most mistakes become <strong>build time errors</strong>.</p><p><em><a href="/docs/scripty/">Learn more</a> about file formats in Zine.</em></p><h2>Watch the video</h2><p><code>//TODO: record the video :^)</code></p><p>Or, for a more hands-on approach, <a href="/quickstart/">see our quickstart guide</a>.</p></div>
+  <div class="get-started"><a href="https://community-extensions.duckdb.org/index.html"><img src="https://duckdb.org/images/logo-dl/DuckDB_Logo.png" height="40px" class="downloadlogo">DuckDB Community Extensions</a></div>
+  <div id="page"><div class="block warning"><h1>Warning</h1><p>This DuckB Extension is a test.<br>To help me understand DuckDB and maybe use JSON APIs.</p><p>-- Using Zine's theme just because it's awesome and convenient.</p></div><h2>What?</h2><p>I'm discovering how DuckDB works internally. I've been using it mainly for ad hoc stuff with the excellent cli. Also, I have a few use cases for accessing json data from api's.  Some are very simple, others are similar to MongoDB.</p><p>I could have used the already excellent <a href="https://duckdb.org/docs/extensions/json" target="_blank">json</a> extension with an external data fetcher, or even the <a href="https://community-extensions.duckdb.org/extensions/shellfs.html" target="_blank">shellfs</a> extension with curl.  Actually, that's how i do it today, use curl and pipe into the read_json /dev/stdin source. However, when I'm in the CLI, I want to stay there.  Especially when I'm running multiple consecutive queries for joins etc.</p><h2>Why this site?</h2><p>I want to document for future self.  Also, there's this excellent <em><a href="https://blog.debug.sexy/" target="_blank">at the boundary</a></em> blog. Started at about the same time I was looking into table functions and realizing there was no good documentation and examples (yet).</p><h2>Scalar functions</h2><p>These return a single value. The <a href="https://github.com/duckdb/extension-template" target="_blank">extension template</a> has the Quack example.</p><h2>Table functions</h2><p>Obviously, these return tables.  Retrieve data, process schema and data types. There are no good starters for this yet.  You can have a look at the parquet extension or the json extension, but they are a bit of a handful to get started with.</p><p>Supports threaded execution.</p><h2>Anatomy of the table function</h2><h3>Register the TableFunction</h3><ul><li>bind</li><li>init</li><li>table function<ul><li>pushdown complex filter</li><li>positional and named parameters</li><li>...</li></ul></li></ul><h3>Order of execution</h3><ol><li>bind</li><li>init</li><li>execute table function</li></ol></div>
 
     </div>
   </body>
