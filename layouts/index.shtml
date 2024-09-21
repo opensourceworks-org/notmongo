@@ -87,6 +87,5 @@
   <p class="centered tagline">
     <img src="/DuckDB_Logo-horizontal.svg" alt="">DuckDB. Is there anything they can't do?!
   </p>
-  <div class="get-started"><a href="https://community-extensions.duckdb.org/index.html"><img src="https://duckdb.org/images/logo-dl/DuckDB_Logo.png" height="40px" class="downloadlogo">DuckDB Community Extensions</a></div>
   <div id="page" :html="$page.content()"></div>
 </div>
