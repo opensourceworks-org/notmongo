@@ -68,14 +68,25 @@
 		.get-started a:hover {
 			background-color: white;
 		}
+
+		img.downloadlogo {
+			height: 30px;
+			width: 130px;
+			position: absolute;
+			top: 10px;
+			left: 15px;
+			z-index: 999;
+			background: red;
+			opacity: 0 !important;
+		}
   </style>
 </head>
 <div id="content">
-  <h1 class="centered title">Zine</h1>
-  <h2 class="centered subtitle">Fast, Scalable, and Flexible Static Site Generator</h2>
+  <h1 class="centered title">NotMongo</h1>
+  <h2 class="centered subtitle">A Maybe DuckDB Extension for JSON APIs</h2>
   <p class="centered tagline">
-    Make art with your words.
+    <img src="/DuckDB_Logo-horizontal.svg" alt="">DuckDB. Is there anything they can't do?!
   </p>
-  <div class="get-started"><a href="/quickstart/">Get Started</a></div>
+  <div class="get-started"><a href="https://community-extensions.duckdb.org/index.html"><img src="https://duckdb.org/images/logo-dl/DuckDB_Logo.png" height="40px" class="downloadlogo">DuckDB Community Extensions</a></div>
   <div id="page" :html="$page.content()"></div>
 </div>
