@@ -46,7 +46,7 @@ Supports threaded execution.
     - pushdown complex filter
     - positional and named parameters
     - extension options: PRAGMA/SET
-    - cardinality: keep track of progress (#rows)
+    - cardinality
 
 ![](/example_tf.png)
 
