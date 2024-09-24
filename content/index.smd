@@ -8,6 +8,7 @@
 
 ># [Warning]($block.attrs('warning'))
 >This DuckB Extension is in early stage and not mature enough for public yet.
+>This DuckB Extension is in early stage and not mature enough for public yet.
 >
 > -- Using [Zine](https://zine-ssg.io/)'s theme just because it's awesome and convenient. --
 
@@ -21,6 +22,14 @@ extension with curl.  Actually, that's how i do it today, use curl and pipe into
 However, when I'm in the cli, I want to stay there.  Especially when I'm running multiple consecutive queries for joins etc.
 
 ## Why this site?
+Documenting for future self.  Also, there's this excellent *[at the boundary](https://blog.debug.sexy/)* blog. 
+Started at about the same time I was looking into table functions. There was no good documentation and examples at the time of this writing.
+
+## Where to start
+- [duckdb: build extensions](https://duckdb.org/docs/dev/building/building_extensions.html)
+- [at the boundary](https://blog.debug.sexy/): explains how to get started with table functions with examples. 
+- read the duckdb extensions code: [json](https://github.com/duckdb/duckdb/blob/main/extension/json/json_extension.cpp), [parquet](https://github.com/duckdb/duckdb/blob/main/extension/parquet/parquet_extension.cpp)
+- [table function source](https://github.com/duckdb/duckdb/tree/main/src/function/table)
 Documenting for future self.  Also, there's this excellent *[at the boundary](https://blog.debug.sexy/)* blog. 
 Started at about the same time I was looking into table functions. There was no good documentation and examples at the time of this writing.
 
