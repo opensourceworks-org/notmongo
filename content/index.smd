@@ -92,6 +92,9 @@ Supports threaded execution.
 
     This is where we get the data from a json api (paged and threaded), parse and return.
 
+### doubts
+
+The json extension is really really good and I don't want to duplicate code or reinvent the wheel.  I haven't found a supported and documented way to reuse the extension or parts of it.  I'm exploring the Catalog (duckdb/catalog/catalog.hpp) and it's entries, but I'm not too keen on using undocumented internal APIs. Also, this means there will be a dependency that has to be clear and well documented.  We'll see.
 ___
 
 ```=html
