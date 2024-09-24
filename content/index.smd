@@ -15,10 +15,8 @@
 I'm discovering how DuckDB works internally. I've been using it mainly for ad hoc stuff with the excellent cli.
 Also, I have a few use cases for accessing json data from api's.  Some are very simple, others are similar to MongoDB.
 
-I could have used the already excellent [json](https://duckdb.org/docs/extensions/json) extension
-with an external data fetcher, or even the [shellfs](https://community-extensions.duckdb.org/extensions/shellfs.html) 
-extension with curl.  Actually, that's how i do it today, use curl and pipe into the read_json /dev/stdin source.
-However, when I'm in the cli, I want to stay there.  Especially when I'm running multiple consecutive queries for joins etc.
+I will build a data fetcher for the excellent [json](https://duckdb.org/docs/extensions/json) extension, much like the [shellfs](https://community-extensions.duckdb.org/extensions/shellfs.html) 
+extension works for shell commands.  
 
 ## Why this site?
 Documenting for future self.  Also, there's this excellent *[at the boundary](https://blog.debug.sexy/)* blog. 
@@ -40,61 +38,7 @@ handful to get started with.
 
 Supports threaded execution.
 
-## Anatomy of the table function
 
-### Register the TableFunction
-- bind
-- init
-- table function    
-    - filer pushdown (where)
-    - projection pushdown (columns)
-    - pushdown complex filter
-    - positional and named parameters
-    - extension options: PRAGMA/SET
-    - cardinality
-
-
-```c
-    static void LoadInternal(DatabaseInstance &instance) {
-            auto myTableFunc = TableFunction("query_json_api", {}, myTableFunction, myBindFunction, myInitFunction);
-        myTableFunc.filter_pushdown = false;
-        myTableFunc.projection_pushdown = true;    
-        myTableFunc.cardinality = myCardinalityFunction;
-        myTableFunc.pushdown_complex_filter = pushdownComplexFilter;
-
-        myTableFunc.named_parameters["options"] = LogicalType::VARCHAR;
-        myTableFunc.named_parameters["api"] = LogicalType::VARCHAR;
-
-        ExtensionUtil::RegisterFunction(instance, myTableFunc);
-        
-        auto &config = DBConfig::GetConfig(instance);
-
-        config.AddExtensionOption("rest_api_config_file", "REST API Config File Location", LogicalType::VARCHAR,
-                                Value("rest_api_extension.json"));
-
-    }
-```
-
-### Order of execution
-1. bind
-
-    Here, we have access to positional and named arguments.  
-    This is where I get the schema from the extension's configuration or from a separate endpoint. Return a struct with whatever we want to pass further down the line.
-
-2. init
-
-    When projection_pushdown is enabled, we get the id of the columns from the SELECT statement. Return these.
-
-3. execute table function
-
-    Get the schema, column ids, filters, etc. 
-    Order_by and limit are not part of any pushdown, however, they are accessible through the ResultModifier class.
-
-    This is where we get the data from a json api (paged and threaded), parse and return.
-
-### doubts
-
-The json extension is really really good and I don't want to duplicate code or reinvent the wheel.  I haven't found a supported and documented way to reuse the extension or parts of it.  I'm exploring the Catalog (duckdb/catalog/catalog.hpp) and it's entries, but I'm not too keen on using undocumented internal APIs. Also, this means there will be a dependency that has to be clear and well documented.  We'll see.
 ___
 
 ```=html
