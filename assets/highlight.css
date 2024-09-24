@@ -14,7 +14,9 @@ code .comment {
 }
 
 
-code.html {}
+code.html {
+
+}
 
 code.html .string {
   color: var(--dark-yellow);
@@ -176,35 +178,39 @@ code.toml .punctuation {
 }
 
 
-code.lua {}
 
-code.lua .string {
+
+code.c {
+  color: var(--magent);
+}
+
+code.c .string {
   color: var(--dark-yellow);
 }
 
-code.lua .variable,
-code.lua .field {
+code.c .variable,
+code.c .field {
   color: var(--light-yellow);
 }
 
-code.lua .keyword.function {
+code.c .keyword.function {
   color: var(--light-red);
 }
 
-code.lua .bracket {
+code.c .bracket {
   color: var(--cyan);
 }
 
-code.lua .function {
+code.c .function {
   color: var(--blue);
 }
 
-code.lua .builtin {
+code.c .builtin {
   color: var(--magenta);
 }
 
-code.lua .operator,
-code.lua .qualifier,
-code.lua .attribute {
+code.c .operator,
+code.c .qualifier,
+code.c .attribute {
   color: var(--light-red);
 }

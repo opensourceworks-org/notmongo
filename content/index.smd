@@ -7,8 +7,7 @@
 ---
 
 ># [Warning]($block.attrs('warning'))
->This DuckB Extension is a test.  
->To help me understand DuckDB and maybe use JSON APIs.
+>This DuckB Extension is in early stage and not mature enough for public yet.
 >
 > -- Using [Zine](https://zine-ssg.io/)'s theme just because it's awesome and convenient. --
 
@@ -19,11 +18,17 @@ Also, I have a few use cases for accessing json data from api's.  Some are very 
 I could have used the already excellent [json](https://duckdb.org/docs/extensions/json) extension
 with an external data fetcher, or even the [shellfs](https://community-extensions.duckdb.org/extensions/shellfs.html) 
 extension with curl.  Actually, that's how i do it today, use curl and pipe into the read_json /dev/stdin source.
-However, when I'm in the CLI, I want to stay there.  Especially when I'm running multiple consecutive queries for joins etc.
+However, when I'm in the cli, I want to stay there.  Especially when I'm running multiple consecutive queries for joins etc.
 
 ## Why this site?
-I want to document for future self.  Also, there's this excellent *[at the boundary](https://blog.debug.sexy/)* blog. 
-Started at about the same time I was looking into table functions and realizing there was no good documentation and examples (yet).
+Documenting for future self.  Also, there's this excellent *[at the boundary](https://blog.debug.sexy/)* blog. 
+Started at about the same time I was looking into table functions. There was no good documentation and examples at the time of this writing.
+
+## Where to start
+- [duckdb: build extensions](https://duckdb.org/docs/dev/building/building_extensions.html)
+- [at the boundary](https://blog.debug.sexy/): explains how to get started with table functions with examples. 
+- read the duckdb extensions code: [json](https://github.com/duckdb/duckdb/blob/main/extension/json/json_extension.cpp), [parquet](https://github.com/duckdb/duckdb/blob/main/extension/parquet/parquet_extension.cpp)
+- [table function source](https://github.com/duckdb/duckdb/tree/main/src/function/table)
 
 ## Scalar functions
 These return a single value. The [extension template](https://github.com/duckdb/extension-template) has the Quack example.
@@ -48,8 +53,27 @@ Supports threaded execution.
     - extension options: PRAGMA/SET
     - cardinality
 
-![](/example_tf.png)
 
+```c
+    static void LoadInternal(DatabaseInstance &instance) {
+            auto myTableFunc = TableFunction("query_json_api", {}, myTableFunction, myBindFunction, myInitFunction);
+        myTableFunc.filter_pushdown = false;
+        myTableFunc.projection_pushdown = true;    
+        myTableFunc.cardinality = myCardinalityFunction;
+        myTableFunc.pushdown_complex_filter = pushdownComplexFilter;
+
+        myTableFunc.named_parameters["options"] = LogicalType::VARCHAR;
+        myTableFunc.named_parameters["api"] = LogicalType::VARCHAR;
+
+        ExtensionUtil::RegisterFunction(instance, myTableFunc);
+        
+        auto &config = DBConfig::GetConfig(instance);
+
+        config.AddExtensionOption("rest_api_config_file", "REST API Config File Location", LogicalType::VARCHAR,
+                                Value("rest_api_extension.json"));
+
+    }
+```
 
 ### Order of execution
 1. bind
@@ -68,3 +92,11 @@ Supports threaded execution.
 
     This is where we get the data from a json api (paged and threaded), parse and return.
 
+### doubts
+
+The json extension is really really good and I don't want to duplicate code or reinvent the wheel.  I haven't found a supported and documented way to reuse the extension or parts of it.  I'm exploring the Catalog (duckdb/catalog/catalog.hpp) and it's entries, but I'm not too keen on using undocumented internal APIs. Also, this means there will be a dependency that has to be clear and well documented.  We'll see.
+___
+
+```=html
+<div align="right" style="color: orange; font-size: 0.6rem;"> jeroenflvr</div>
+```
