@@ -83,8 +83,8 @@ Supports threaded execution.
 
 2. init
 
-    Get the schema, column ids, filters, etc. 
-    Prepare the the Intermediate Representation of the query, analyze pushdown to the json queries and construct the query.
+    Get the schema, column ids, filters, etc.  
+    Prepare the Intermediate Representation of the query, analyze pushdown to the json queries and construct the query.
 
 3. execute table function
 
